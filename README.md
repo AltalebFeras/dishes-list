@@ -1,50 +1,143 @@
-# Welcome to your Expo app 👋
+# 🍽️ Dishes List App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application built with Expo for browsing and managing your favorite dishes.
 
-## Get started
+## � About
 
-1. Install dependencies
+This is an [Expo](https://expo.dev) project that provides users with a beautiful interface to browse dishes, view details, and manage favorites.
+
+## 🚀 Quick Start
+
+### Development Setup
+
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Start the development server**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. **Run on device/emulator**
+   - [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
+   - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+   - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+   - [Expo Go](https://expo.dev/go) app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📦 Building for Production
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 🔧 Quick Build Commands
 
 ```bash
-npm run reset-project
+# For website distribution (APK)
+eas build --platform android --profile preview
+
+# For Google Play Store (AAB)
+eas build --platform android --profile production
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 📖 Complete Build Guide
 
-## Learn more
+For detailed build instructions, troubleshooting, and distribution methods, see:
+**[📋 BUILD_GUIDE.md](./BUILD_GUIDE.md)**
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🏗️ Project Structure
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```text
+dishes-list/
+├── app/                 # Main application screens
+│   ├── (tabs)/         # Tab-based navigation
+│   ├── _layout.tsx     # Root layout
+│   ├── index.tsx       # Home screen
+│   └── dish-detail.tsx # Dish details screen
+├── components/         # Reusable UI components
+├── constants/          # App constants
+├── services/          # API services
+├── types/             # TypeScript type definitions
+├── assets/            # Images, fonts, icons
+├── eas.json          # EAS build configuration
+└── app.json          # Expo app configuration
+```
 
-## Join the community
+## 🛠️ Available Scripts
 
-Join our community of developers creating universal apps.
+```bash
+npm start          # Start Expo development server
+npm run android    # Run on Android emulator
+npm run ios        # Run on iOS simulator
+npm run web        # Run in web browser
+npm run lint       # Run ESLint
+npm run reset-project  # Reset to blank project
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📱 App Features
+
+- 🍽️ Browse dishes catalog
+- 📖 View detailed dish information
+- ⭐ Manage favorite dishes
+- 👤 User profile management
+- 📱 Responsive design for all screen sizes
+
+## 🔧 Tech Stack
+
+- **Framework:** React Native with Expo
+- **Navigation:** Expo Router (file-based routing)
+- **Language:** TypeScript
+- **UI:** Custom components with Expo design system
+- **State Management:** React hooks
+- **Build System:** EAS (Expo Application Services)
+
+## 🚀 Deployment
+
+### Development
+
+```bash
+expo start
+```
+
+### Production Build
+
+```bash
+# APK for direct distribution
+eas build --platform android --profile preview
+
+# AAB for Play Store
+eas build --platform android --profile production
+```
+
+### Store Submission
+
+```bash
+eas submit --platform android
+```
+
+## 📋 Build Status
+
+- **Current Version:** 1.0.0
+- **Package Name:** com.ferasaltaleb.disheslist
+- **Build System:** EAS
+- **Target SDK:** Android 34+
+
+## 🔗 Links
+
+- **EAS Dashboard:** [expo.dev/accounts/feras.altaleb/projects/dishes-list](https://expo.dev/accounts/feras.altaleb/projects/dishes-list)
+- **Build Guide:** [BUILD_GUIDE.md](./BUILD_GUIDE.md)
+
+## 📚 Learn More
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals and advanced topics
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Step-by-step tutorial
+- [EAS Build](https://docs.expo.dev/build/introduction/): Build and distribute apps
+
+## 🤝 Community
+
+- [Expo on GitHub](https://github.com/expo/expo): Open source platform
+- [Discord community](https://chat.expo.dev): Chat with developers
+
+---
+
+Happy Coding! 🚀
