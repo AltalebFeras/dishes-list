@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
     ActivityIndicator,
@@ -54,39 +54,50 @@ export default function DishDetail() {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <Image source={{ uri: dish.thumbnailUrl }} style={styles.image} />
-      
-      <View style={styles.content}>
-        <Text style={styles.title}>{dish.name}</Text>
-        <Text style={styles.category}>{dish.category}</Text>
-        <Text style={styles.price}>
-          {dish.price.amount} {dish.price.currency}
-        </Text>
+    <>
+      <Stack.Screen 
+        options={{ 
+          title: dish?.name || 'Dish Details',
+          headerStyle: {
+            backgroundColor: '#2e7d32',
+          },
+          headerTintColor: '#fff',
+        }} 
+      />
+      <ScrollView style={styles.container}>
+        <Image source={{ uri: dish.thumbnailUrl }} style={styles.image} />
         
-        <Text style={styles.description}>{dish.description}</Text>
-        
-        <Text style={styles.sectionTitle}>Ingredients:</Text>
-        {dish.ingredients.map((ingredient, index) => (
-          <Text key={index} style={styles.ingredient}>
-            • {ingredient}
+        <View style={styles.content}>
+          <Text style={styles.title}>{dish.name}</Text>
+          <Text style={styles.category}>{dish.category}</Text>
+          <Text style={styles.price}>
+            {dish.price.amount} {dish.price.currency}
           </Text>
-        ))}
-        
-        {dish.images.length > 0 && (
-          <>
-            <Text style={styles.sectionTitle}>More Images:</Text>
-            {dish.images.map((imageUrl, index) => (
-              <Image 
-                key={index} 
-                source={{ uri: imageUrl }} 
-                style={styles.additionalImage} 
-              />
-            ))}
-          </>
-        )}
-      </View>
-    </ScrollView>
+          
+          <Text style={styles.description}>{dish.description}</Text>
+          
+          <Text style={styles.sectionTitle}>Ingredients:</Text>
+          {dish.ingredients.map((ingredient, index) => (
+            <Text key={index} style={styles.ingredient}>
+              • {ingredient}
+            </Text>
+          ))}
+          
+          {dish.images.length > 0 && (
+            <>
+              <Text style={styles.sectionTitle}>More Images:</Text>
+              {dish.images.map((imageUrl, index) => (
+                <Image 
+                  key={index} 
+                  source={{ uri: imageUrl }} 
+                  style={styles.additionalImage} 
+                />
+              ))}
+            </>
+          )}
+        </View>
+      </ScrollView>
+    </>
   );
 }
 
