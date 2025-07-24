@@ -1,13 +1,13 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Favorites() {
+export default function Cart() {
   return (
     <View style={styles.container}>
-      <Ionicons name="heart-outline" size={64} color="#ccc" />
-      <Text style={styles.title}>Your Favorites</Text>
+      <Ionicons name="cart-outline" size={64} color="#ccc" />
+      <Text style={styles.title}>Your Cart</Text>
       <Text style={styles.subtitle}>
-        Save your favorite dishes here
+        Your cart is currently empty. Start adding dishes to your cart!
       </Text>
     </View>
   );

@@ -28,20 +28,19 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Menu',
-          headerTitle: 'Our Dishes',
+          title: 'Dishes',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="restaurant" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="favorites"
+        name="cart"
         options={{
-          title: 'Favorites',
-          headerTitle: 'My Favorites',
+          title: 'Cart',
+          headerTitle: 'Your Cart',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart" size={size} color={color} />
+            <Ionicons name="cart" size={size} color={color} />
           ),
         }}
       />
