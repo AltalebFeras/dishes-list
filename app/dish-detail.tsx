@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { dishesApi } from '../services/api';
 import { Dish } from '../types/dish';
+import { Colors } from '@/constants/Colors';
 
 export default function DishDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -39,7 +40,7 @@ export default function DishDetail() {
   if (loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color={Colors.light.primary} />
         <Text>Loading dish details...</Text>
       </View>
     );
