@@ -9,6 +9,7 @@ import {
 import DishCard from "../../components/DishCard";
 import { dishesApi } from "../../services/api";
 import { Dish } from "../../types/dish";
+import Colors from "@/constants/Colors";
 
 export default function Index() {
   const [dishes, setDishes] = useState<Dish[]>([]);
@@ -39,7 +40,7 @@ export default function Index() {
   if (loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color="#2e7d32" />
+        <ActivityIndicator size="large" color={Colors.primary}/>
         <Text style={styles.loadingText}>Loading dishes...</Text>
       </View>
     );
